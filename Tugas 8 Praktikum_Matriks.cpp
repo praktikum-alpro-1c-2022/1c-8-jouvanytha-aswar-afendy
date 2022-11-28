@@ -4,110 +4,118 @@ using namespace std;
 
 int main(){
   int i, j, m, n,r,p, matriks[10][10],matriks2 [10][10],C [10][10], transpose[10][10];
-  cout << " =================================\n";
-  cout << "    PROGRAM MENGHITUNG MATRIKS"<<endl;
-  cout << " =================================\n";
-  cout << " NAMA  : JOUVANYTHA ASWAR AFENDY " << endl;
-  cout << " KELAS : 1C INFORMATIKA"<<endl;
-  cout << " NPM   : 2210631170024"<<endl;
-  cout << "==================================\n";
-  cout << "      Masukkan Ordo Matriks"<<endl;
-  cout << "----------------------------------\n";
-  cout << "Masukkan jumlah baris matriks : ";
-  cin >> m;
-  cout << "Masukkan jumlah kolom matriks : ";
-  cin >> n;
+  cout<<"==============================="<<endl;
+  cout<<"   Progam Menghitung Matriks"<<endl;
+  cout<<"==============================="<<endl;
+  cout<<"Nama  : Jouvanytha Aswar Afendy " << endl;
+  cout<<"Kelas : 1C " << endl;
+  cout<<"NPM   : 2210631170024 " << endl;
+  cout<<"==============================="<<endl;
+  cout<<"Masukkan Ordo Matriks"<<endl;
+  cout<<" \n";
+  cout<<"Banyaknya Baris : ";
+  cin>>m;
+  cout<<"Banyaknya Kolom : ";
+  cin>>n;
+  cout<<endl;
 
-  cout << "--------------------------------\n";
+  cout << "============================\n";
   cout << "Masukkan elemen matriks A :\n";
   for (i = 0; i < m; i++){
     for (j = 0; j < n; j++){
-    cout << " elemen ["<< i+1 <<"," << j+1 <<"]: ";
-      cin >> matriks[i][j];
+    cout<<" elemen ["<<i+1<<","<<j+1<<"]: ";
+      cin  >> matriks[i][j];
     }
-  }for (i = 0; i < m; i++){
+  }
+
+  cout << "============================\n";
+  cout << "Masukkan elemen matriks B :\n";
+  for (i = 0; i < m; i++){
+    for (j = 0; j < n; j++){
+    cout<<" elemen ["<<i+1<<","<<j+1<<"]: ";
+      cin  >> matriks2[i][j];
+    }
+  }
+cout << "==============================\n";
+cout << "Matriks A : " << endl;
+    for (i=0; i< m; i++){
+        for (j=0; j< n; j++){
+            cout << " " << matriks[i][j]<<"\t";
+            if (j==n-1){
+            cout << endl;
+                }
+            }
+        }
+  for (i = 0; i < m; i++){
     for (j = 0; j < n; j++){
       transpose[j][i] = matriks[i][j];
     }
   }
-  cout << " \n";
-  cout << "HASIL TRANPOSE MATRIKS = \n";
+
+  cout << "HASIL TRANPOSE MATRIKS A: \n";
   for (i = 0; i < n; i++){
     for (j = 0; j < m; j++){
-      cout << transpose[i][j] << "\t";
+      cout << " " <<transpose[i][j] << "\t";
     }
     cout << endl;
   }
-  cout << "--------------------------------\n";
-  cout << "Masukkan elemen matriks B :\n";
-  for (i = 0; i < m; i++){
-    for (j = 0; j < n; j++){
-    cout << " elemen ["<< i+1 << "," << j+1 <<"]: ";
-      cin >> matriks2[i][j];
-    }
-  }
-
+cout << "==============================\n";
+cout << "Matriks B : " << endl;
+    for (i=0; i< m; i++){
+        for (j=0; j< n; j++){
+            cout << " " << matriks2[i][j] <<"\t";
+            if (j==n-1){
+            cout << endl;
+                }
+            }
+        }
   for (i = 0; i < m; i++){
     for (j = 0; j < n; j++){
       transpose[j][i] = matriks2[i][j];
     }
   }
-  cout << " \n";
-  cout << "HASIL TRANPOSE MATRIKS = \n";
+
+  cout << "HASIL TRANPOSE MATRIKS B: \n";
   for (i = 0; i < n; i++){
     for (j = 0; j < m; j++){
-      cout << transpose[i][j] << "\t";
+      cout << " " <<transpose[i][j] << "\t";
     }
     cout << endl;
   }
-  {
-cout<<"--------------------------------------------"<<endl;
-cout<<" Pilih 1 = Penjumlahan \n Pilih 2 = Perkalian \n Pilihan Anda : ";cin>>p;
-cout<<"--------------------------------------------"<<endl;
-}
-{
-
-
-if(p==1)
-   {
    for (i=0;i<m;i++) for(j=0;j<n;j++)
    C[i][j]=matriks[i][j]+matriks2[i][j];
-   cout << "MATRIKS HASIL PENJUMLAHAN = \n";
+   cout << "\n" << "MATRIKS HASIL PENJUMLAHAN = "<<endl;
    for (i=0;i<m;i++)
    {
    for(j=0;j<n;j++)
-   cout << C[i][j] <<" ";
-   cout << endl;
+   cout<< " " <<C[i][j]<<"\t";
+   cout<<endl;
    }
-
-}
-
-if(p==2)
-   {
-   cout << "MATRIKS : \n";
-   cout << "Matriks A        Matriks B" <<endl;
+   cout << "==============================\n";
+   cout<<"MATRIKS : "<<endl;
+   cout<<"\nMatriks A          Matriks B"<<endl;
    for (i=0;i<m;i++)
     {
       for (j=0;j<n;j++)
       {
-        cout << matriks[i][j] <<"    ";
+        cout<<matriks[i][j]<<"    ";
       }
     if (i==0)
     {
-       cout << "x";
-       cout << "    ";
+       cout<<"x";
+       cout<<"    ";
        for (j=0;j<m;j++)
        {
-         cout << matriks2[i][j]<<"    ";
+         cout<<matriks2[i][j]<<"    ";
        }
     }
     if (i>0)
     {
-        cout <<"    ";
+        cout<<"    ";
         for (j=0;j<m;j++)
-        cout <<" "<<matriks2[i][j] <<"   ";
+        cout<<" "<<matriks2[i][j]<<"   ";
     }
-    cout << endl;
+    cout<<endl;
     }
    C[i+1][j+1]=0;
    for (i=0;i<m;i++)
@@ -121,21 +129,15 @@ if(p==2)
        }
      }
    }
-   cout << "\n" << "MATRIKS HASIL PERKALIAN = \n";
+   cout<<endl<<"MATRIKS HASIL PERKALIAN = "<<endl;
    for (i=0;i<m;i++)
    {
      for (j=0;j<n;j++)
      {
-       cout << C[i+1][j+1] <<"     ";
+       cout<<C[i+1][j+1]<<"     ";
      }
-     cout << endl;
+     cout<<endl;
    }
 
-   }
 
-else
-  {
-   cout << "Salah !" <<endl;
-   }
-}
 }
